@@ -3,20 +3,19 @@ module.exports = function(grunt) {
     coffee: {
       app: {
         src: [ 'coffee/test.coffee' ],
-	dest: 'js/test.js',
-	options: {
-
-	}
+        dest: 'js/test.js',
+        options: {
+        }
       },
     },
     uglify: {
       my_target: {
         options: {
-	  
-	},
-	files: {
-	  'build/test.min.js': [ 'js/test.js' ]
-	},
+        
+	    },
+        files: {
+          'build/test.min.js': [ 'js/test.js' ]
+        },
       },
     },
   });
