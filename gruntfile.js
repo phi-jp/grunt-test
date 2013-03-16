@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-contrib-coffee');
+
+  var pkg = grunt.file.readJSON('package.json');
 
   grunt.initConfig({
   	buildDir: "build",
@@ -54,13 +55,12 @@ module.exports = function(grunt) {
       }
     }
   });
-  
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
+  for (var key in pkg.devDependencies) {
+    if (/grunt-contrib/.test(key)) {
+      grunt.loadNpmTasks(key);
+    }
+  }
 
   grunt.registerTask('test', ['coffee', 'uglify', 'less', 'cssmin', 'jade', 'htmlmin']);
 }

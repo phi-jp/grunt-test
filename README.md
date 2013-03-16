@@ -7,7 +7,7 @@ grunt-test
 ## Usage
 
 
-#### npm で環境を整える
+### npm で環境を整える
 
 grunt-cli と grunt, grunt 用プラグインもろもろ
 落ちてきます.
@@ -16,7 +16,7 @@ grunt-cli と grunt, grunt 用プラグインもろもろ
 $npm install
 ```
 
-#### テストしてみる
+### テストしてみる
 
 下記のように出力されてればok!!
 
