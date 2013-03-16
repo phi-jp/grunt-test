@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
-	this.pageTitle = 'hoge';
-
   grunt.initConfig({
+  	buildDir: "build",
+
     coffee: {
       app: {
         src: [ 'coffee/test.coffee' ],
@@ -16,43 +16,43 @@ module.exports = function(grunt) {
       my_target: {
         options: {
         
-	      },
+        },
         files: {
-          'build/test.min.js': [ 'js/test.js' ]
+          '<%= buildDir %>/test.min.js': [ 'js/test.js' ]
         },
       },
     },
-		less: {
-		  my_target: {
-			  src: ['less/test.less'],
-				dest: 'css/test.css'
-			}
-		},
-		cssmin: {
-		  my_target: {
-			  src: ['css/test.css'],
-				dest: 'build/test.min.css'
-			}
-		},
-		jade: {
+    less: {
       my_target: {
-			  files: {
-				  'html/index.html': ['jade/index.jade']
-				},
-				options: {
-				  locals: {
-					  'pageTitle': 'Grunt.js test'
-					}
-				}
-			}
-		},
-		htmlmin: {
-		  my_target: {
-			  files: {
-				  'build/index.html': 'html/index.html'
-				}
-			}
-		}
+        src: ['less/test.less'],
+          dest: 'css/test.css'
+        }
+      },
+      cssmin: {
+        my_target: {
+          src: ['css/test.css'],
+            dest: '<%= buildDir %>/test.min.css'
+          }
+        },
+      jade: {
+        my_target: {
+          files: {
+          'html/index.html': ['jade/index.jade']
+        },
+        options: {
+          locals: {
+            'pageTitle': 'Grunt.js test'
+          }
+        }
+      }
+    },
+    htmlmin: {
+      my_target: {
+        files: {
+          '<%= buildDir %>/index.html': 'html/index.html'
+        }
+      }
+    }
   });
   
   grunt.loadNpmTasks('grunt-contrib-uglify');
