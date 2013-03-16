@@ -1,0 +1,29 @@
+{
+  "name": "grunt-test",
+  "version": "0.0.0",
+  "description": "grunt.js test",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm install -g grunt-cli",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/phi1618/grunt-test.git"
+  },
+  "keywords": [
+    "grunt.js"
+  ],
+  "author": "phi",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "fbed4de567509e59fe137facc9ac749b882aad97",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.6.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.5.0"
+  }
+}
